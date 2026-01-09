@@ -37,32 +37,32 @@ Install with [vim-plug](https://github.com/junegunn/vim-plug):
 ```vim
 " If you don't have nodejs and yarn
 " use pre build, add 'vim-plug' to the filetype list so vim-plug can update this plugin
-" see: https://github.com/iamcco/markdown-preview.nvim/issues/50
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+" see: https://github.com/jeewangue/markdown-preview.nvim/issues/50
+Plug 'jeewangue/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 
 " If you have nodejs
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
+Plug 'jeewangue/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 ```
 
 Or install with [dein](https://github.com/Shougo/dein.vim):
 
 ```vim
-call dein#add('iamcco/markdown-preview.nvim', {'on_ft': ['markdown', 'pandoc.markdown', 'rmd'],
+call dein#add('jeewangue/markdown-preview.nvim', {'on_ft': ['markdown', 'pandoc.markdown', 'rmd'],
 					\ 'build': 'sh -c "cd app && npx --yes yarn install"' })
 ```
 
 Or with [minpac](https://github.com/k-takata/minpac):
 
 ```vim
-call minpac#add('iamcco/markdown-preview.nvim', {'do': 'packloadall! | call mkdp#util#install()'})
+call minpac#add('jeewangue/markdown-preview.nvim', {'do': 'packloadall! | call mkdp#util#install()'})
 ```
 
 Or with [Vundle](https://github.com/vundlevim/vundle.vim):
 
 Place this in your `.vimrc` or `init.vim`,
 ```vim
-Plugin 'iamcco/markdown-preview.nvim'
+Plugin 'jeewangue/markdown-preview.nvim'
 ```
 ... then run the following in Vim (to complete the `Plugin` installation):
 ```vim
@@ -77,7 +77,7 @@ Add this in your `init.lua or plugins.lua`
 ```lua
 -- install without yarn or npm
 {
-    "iamcco/markdown-preview.nvim",
+    "jeewangue/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
@@ -85,7 +85,7 @@ Add this in your `init.lua or plugins.lua`
 
 -- install with yarn or npm
 {
-  "iamcco/markdown-preview.nvim",
+  "jeewangue/markdown-preview.nvim",
   cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
   build = "cd app && yarn install",
   init = function()
@@ -102,24 +102,24 @@ Add this in your `init.lua or plugins.lua`
 ```lua
 -- install without yarn or npm
 use({
-    "iamcco/markdown-preview.nvim",
+    "jeewangue/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
 })
 
-use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+use({ "jeewangue/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 ```
 
 Or by hand:
 
 ```vim
-use {'iamcco/markdown-preview.nvim'}
+use {'jeewangue/markdown-preview.nvim'}
 ```
 
 add plugin to the `~/.local/share/nvim/site/pack/packer/start/` directory:
 
 ```vim
 cd ~/.local/share/nvim/site/pack/packer/start/
-git clone https://github.com/iamcco/markdown-preview.nvim.git
+git clone https://github.com/jeewangue/markdown-preview.nvim.git
 cd markdown-preview.nvim
 npx --yes yarn install
 npx --yes yarn build
@@ -158,7 +158,7 @@ let g:mkdp_open_to_the_world = 0
 
 " use custom IP to open preview page.
 " Useful when you work in remote Vim and preview on local browser.
-" For more details see: https://github.com/iamcco/markdown-preview.nvim/pull/9
+" For more details see: https://github.com/jeewangue/markdown-preview.nvim/pull/9
 " default empty
 let g:mkdp_open_ip = ''
 
@@ -428,7 +428,7 @@ Set `updatetime` to a small number, for instance: `set updatetime=100`
 *WSL 2 issue*: Can not open browser when using WSL 2 with terminal Vim.
 
 > if you are using Ubuntu you can install xdg-utils using `sudo apt-get install -y xdg-utils`
-> checkout [issue 199](https://github.com/iamcco/markdown-preview.nvim/issues/199) for more detail.
+> checkout [issue 199](https://github.com/jeewangue/markdown-preview.nvim/issues/199) for more detail.
 
 #### *How can I change the dark/light theme?*
 

@@ -1,11 +1,9 @@
-
+/** @type {import('next').NextConfig} */
 module.exports = {
-  pageExtensions: [ 'jsx' ],
-  exportPathMap: async function () {
-    return {
-      '/': { page: '/' },
-      '/404.html': { page: '/404' }
-    }
+  output: 'export',
+  pageExtensions: ['jsx'],
+  trailingSlash: true,
+  images: {
+    unoptimized: true
   }
 }
-

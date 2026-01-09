@@ -1,4 +1,7 @@
-import Chart from 'chart.js'
+import { Chart, registerables } from 'chart.js'
+
+// Register all chart.js components (v4+ requirement)
+Chart.register(...registerables)
 
 function render () {
   document.querySelectorAll('.chartjs').forEach(element => {

@@ -1,4 +1,4 @@
-import { attach, Attach, NeovimClient } from '@chemzqm/neovim'
+import { attach, Attach, Neovim } from '@chemzqm/neovim'
 
 const logger = require('../util/logger')('attach') // tslint:disable-line
 
@@ -24,13 +24,13 @@ interface IApp {
 
 interface IPlugin {
   init: ((app: IApp) => void)
-  nvim: NeovimClient
+  nvim: Neovim
 }
 
 let app: IApp
 
 export default function(options: Attach): IPlugin {
-  const nvim: NeovimClient = attach(options)
+  const nvim: Neovim = attach(options)
 
   nvim.on('notification', async (method: string, args: any[]) => {
     const opts = args[0] || args

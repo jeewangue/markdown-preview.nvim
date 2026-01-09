@@ -73,3 +73,12 @@ typings/
 
 app/.next/
 app/bin/
+
+# TypeScript build info
+*.tsbuildinfo
+
+# AI
+.mcp.json
+.serena/
+.playwright-mcp/
+CLAUDE.md

@@ -3,7 +3,7 @@ import Head from 'next/head'
 import io from 'socket.io-client'
 import MarkdownIt from 'markdown-it'
 import hljs from 'highlight.js'
-import emoji from 'markdown-it-emoji'
+import { full as emoji } from 'markdown-it-emoji'
 import taskLists from 'markdown-it-task-lists'
 import footnote from 'markdown-it-footnote'
 import markdownItAnchor from 'markdown-it-anchor'
@@ -335,7 +335,7 @@ export default class PreviewPage extends React.Component {
           <link rel="stylesheet" href="/_static/page.css" />
           <link rel="stylesheet" href="/_static/markdown.css" />
           <link rel="stylesheet" href="/_static/highlight.css" />
-          <link rel="stylesheet" href="/_static/katex@0.15.3.css" />
+          <link rel="stylesheet" href="/_static/katex.min.css" />
           <link rel="stylesheet" href="/_static/sequence-diagram-min.css" />
           <script type="text/javascript" src="/_static/underscore-min.js"></script>
           <script type="text/javascript" src="/_static/webfont.js"></script>
@@ -343,7 +343,7 @@ export default class PreviewPage extends React.Component {
           <script type="text/javascript" src="/_static/tweenlite.min.js"></script>
           <script type="text/javascript" src="/_static/mermaid.min.js"></script>
           <script type="text/javascript" src="/_static/sequence-diagram-min.js"></script>
-          <script type="text/javascript" src="/_static/katex@0.15.3.js"></script>
+          <script type="text/javascript" src="/_static/katex.min.js"></script>
           <script type="text/javascript" src="/_static/mhchem.min.js"></script>
           <script type="text/javascript" src="/_static/raphael@2.3.0.min.js"></script>
           <script type="text/javascript" src="/_static/flowchart@1.13.0.min.js"></script>

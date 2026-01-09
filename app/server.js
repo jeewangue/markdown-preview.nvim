@@ -48,8 +48,13 @@ exports.run = function () {
     routes(req, res)
   })
 
-  // websocket server
-  const io = websocket(server)
+  // websocket server (socket.io v4 requires CORS configuration)
+  const io = websocket(server, {
+    cors: {
+      origin: '*',
+      methods: ['GET', 'POST']
+    }
+  })
 
   io.on('connection', async (client) => {
     const { handshake = { query: {} } } = client

@@ -419,6 +419,57 @@ Or
     }
     ```
 
+### Development & Testing
+
+#### Building from Source
+
+```bash
+# Install dependencies
+yarn install
+
+# Build TypeScript (src/ -> app/lib/)
+yarn build-lib
+
+# Build Next.js frontend
+yarn build-app
+
+# Full build (includes platform binaries)
+yarn build
+```
+
+#### Testing with Neovim
+
+1. **Basic Test** - Use the minimal test configuration:
+   ```bash
+   # From project root
+   nvim -u test/init.vim test/test.md
+   # Then run :MarkdownPreview
+   ```
+
+2. **Debug Mode** - Enable logging to troubleshoot:
+   ```vim
+   " Add to your config or test/init.vim
+   let $NVIM_MKDP_LOG_FILE = expand('~/mkdp-log.log')
+   let $NVIM_MKDP_LOG_LEVEL = 'debug'
+   ```
+   Then check `~/mkdp-log.log` after running `:MarkdownPreview`.
+
+#### Standalone Renderer Test (without Neovim)
+
+Test the rendering engine independently:
+
+```bash
+# Build first
+yarn build-lib && yarn build-app
+
+# Start test server
+node test-server.js
+
+# Open http://localhost:8888/page/1 in browser
+```
+
+This renders `test/test.md` with all supported features (KaTeX, Mermaid, PlantUML, etc.).
+
 ### FAQ
 
 #### *Why is the synchronised scrolling lagging?*
